@@ -1,0 +1,7 @@
+---
+influx_url: http://localhost:8086
+influx_dbname: jmxtrans
+influx_username: jmxtrans
+influx_password: jmxtrans
+
+enable_kafka: true

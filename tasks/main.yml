@@ -1,0 +1,19 @@
+---
+- name: Install jmxtrans
+  yum: 
+    name: http://central.maven.org/maven2/org/jmxtrans/jmxtrans/259/jmxtrans-259.rpm
+    state: present
+
+- name: Set influxdb config
+  lineinfile:
+    dest: /etc/jmxtrans/wrapper.conf
+    insertafter: "wrapper.java.additional.6=-Djmxtrans.log.dir=/var/log/jmxtrans"
+    line: "wrapper.java.additional.7=-DinfluxUrl={{ influx_url }} -DinfluxDb={{ influx_dbname }} -DinfluxUser={{ influx_username }} -DinfluxPwd={{ influx_password }} -Dhostname={{ ansible_hostname }}"
+  notify: restart jmxtrans
+
+- name: Copy template for kafka jmx
+  copy:
+    src: files/kafka.json
+    dest: /var/lib/jmxtrans/kafka.json
+    mode: 0444
+  when: enable_kafka
