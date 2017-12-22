@@ -1,7 +1,7 @@
 ---
 - name: Install jmxtrans
-  yum: 
-    name: http://central.maven.org/maven2/org/jmxtrans/jmxtrans/259/jmxtrans-259.rpm
+  yum:
+    name: http://central.maven.org/maven2/org/jmxtrans/jmxtrans/{{jmxtrans_version}}/jmxtrans-{{jmxtrans_version}}.rpm
     state: present
 
 - name: Set influxdb config

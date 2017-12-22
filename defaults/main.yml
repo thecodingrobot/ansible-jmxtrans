@@ -4,4 +4,6 @@ influx_dbname: jmxtrans
 influx_username: jmxtrans
 influx_password: jmxtrans
 
+jmxtrans_version: 268
+
 enable_kafka: true
