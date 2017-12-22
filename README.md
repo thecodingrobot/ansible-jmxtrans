@@ -1,7 +1,7 @@
-Ansible role: Telegraf
+Ansible role: jmxtrans 
 =========
 
-Installs [jmxtrans](https://github.com/jmxtrans/jmxtrans) on CentOS/RedHat Linux. 
+Installs [jmxtrans](https://github.com/jmxtrans/jmxtrans) on CentOS/RedHat Linux.
 
 Requirements
 ------------
